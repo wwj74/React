@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* 
+     *方法一: float + margin-left
+    */
+
+    .box {
+      height: 200px;
+    }
+
+    .box > div {
+      height: 100%;
+    }
+
+    .box-left {
+      width: 200px;
+      float: left;
+      background-color: blue;
+    }
+
+    .box-right {
+      margin-left: 200px;
+      background-color: red;
+    }
+
+    /* 
+     * 方法二: float + float、calc 
+    */
+
+    .box {
+      height: 200px;
+    }
+
+    .box > div {
+      height: 100%;
+    }
+
+    .box-left {
+      width: 200px;
+      float: left;
+      background-color: blue;
+    }
+
+    .box-right {
+      width: calc(100% - 200px);
+      float: right;
+      background-color: red;
+    }
+
+    /* 
+     * 方法三: float + overflow 
+    */
+    .box {
+      height: 200px;
+    }
+
+    .box > div {
+      height: 100%;
+    }
+
+    .box-left {
+      width: 200px;
+      float: left;
+      background-color: blue;
+    }
+
+    .box-right {
+      overflow: hidden;
+      background-color: red;
+    }
+
+    /* 
+     * 方法四: flex
+     */
+    .box {
+      height: 200px;
+      display: flex;
+    }
+
+    .box > div {
+      height: 100%;
+    }
+
+    .box-left {
+      width: 200px;
+      background-color: blue;
+    }
+
+    .box-right {
+      flex: 1; /* 设置flex-grow属性为1，默认为0 */
+      overflow: hidden;
+      background-color: red;
+    }
+  </style>
+  <body>
+    <!-- 
+    如何实现左侧宽度固定，右侧宽度自适应的布局
+ -->
+    <div class="box">
+      <div class="box-left">左侧</div>
+      <div class="box-right">右侧</div>
+    </div>
+  </body>
+</html>
